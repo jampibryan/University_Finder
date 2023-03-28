@@ -25,14 +25,14 @@ const finder = async () => {
         let result = regex.test(name)
 
         if (result) {
-            resultados += `<li> <a href="${data[i].web_pages}"> ${data[i].name} </a> </li>`
+            resultados += `<li class="lista__li"> <a href="${data[i].web_pages}" target="_blank"> ${data[i].name} </a> </li>`
             countResultados++
         }
         if (countResultados == 0) {
-            captionText = `No se encontró ningún resultado`
+            captionText = `No se encontró ningún resultado, intente buscar con otro nombre. :c`
             caption.innerHTML = captionText
         } else {
-            captionText = `Resultados`
+            captionText = `RESULTADOS`
             caption.innerHTML = captionText
         }
     }
