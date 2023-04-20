@@ -7,6 +7,7 @@
     <title>University Finder</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <div class="container">
       <h1 class="title">University Finder</h1>
@@ -16,19 +17,26 @@
         <button class="btn_search">Search</button>
       </div>
 
+      <div class="loader none">
+        <img src="assets/puff.svg" alt="Cargando" />
+      </div>
+
+      <div class="sad none">
+        <img src="assets/sad-face-emoji.svg" alt="" />
+      </div>
+
+      <div class="error_red none">
+        <img src="assets/red.svg" alt="" />
+        <p class="comment1">Connect to the internet</p>
+        <p class="comment2">You're offline. Check your connection.</p>
+        <button class="btn_retry">Retry</button>
+      </div>
+
       <div class="caption"></div>
       <ul class="lista"></ul>
+
+      <ol id="error_fetch"></ol>
     </div>
   </body>
   <script src="script.js"></script>
 </html>
-
-<!-- crea una pagina de web que tiene una entrada de texto que me permite buscar universidades por nombre. 
-    La lista de resultados tiene que mostrar los nombres de las universidades 
-    y cada nombre tiene que ser un unlace a la pagina de web de the universidad. -->
-
-<!-- Si no hay resultados por el nombre que busco, 
-    mostrar un mensaje que sugiere que debo tratar otro nombre. -->
-
-<!-- Mientras se procesa la busqueda, muestra un mensaje que me indica que esta procesando.(Editado) -->
-

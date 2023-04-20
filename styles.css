@@ -39,7 +39,8 @@ body {
   background-color: #fff;
 }
 
-.btn_search {
+.btn_search,
+.btn_retry {
   background-color: #000;
   color: #fff;
   padding: 5px 40px;
@@ -49,14 +50,39 @@ body {
   border: none;
 }
 
-.btn_search:hover {
+.btn_search:hover,
+.btn_retry:hover {
   background-color: #333333;
+}
+
+.loader,
+.sad,
+.error_red {
+  margin: auto;
+}
+
+.none {
+  display: none;
 }
 
 .caption {
   font-size: 30px;
   padding: 10px 0;
   font-weight: bolder;
+}
+
+.comment1 {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.comment2 {
+  font-size: 14px;
+}
+
+.btn_retry {
+  margin-top: 15px;
+  font-size: 16px;
 }
 
 .lista__li {
