@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Finder</title>
+    <title data-testid="titulo">University Finder</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -13,8 +14,8 @@
       <h1 class="title">University Finder</h1>
 
       <div class="form">
-        <input id="nameU" type="text" placeholder="Write hear" />
-        <button class="btn_search">Search</button>
+        <input id="nameU" type="text" placeholder="Write hear" data-testid="input-write" />
+        <button class="btn_search" data-testid="btn-search">Search</button>
       </div>
 
       <div class="loader none">
@@ -33,10 +34,14 @@
       </div>
 
       <div class="caption"></div>
-      <ul class="lista"></ul>
+      <ul class="lista" data-testid="lista"></ul>
 
-      <ol id="error_fetch"></ol>
+      <div class="error_fetch none">
+        <p id="mensaje_error_fetch"></p>
+        <img src="assets/error-500.png" alt="" />
+      </div>
+
     </div>
   </body>
-  <script src="script.js"></script>
+  <script type="module" src="script.js" ></script>
 </html>

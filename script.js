@@ -1,4 +1,16 @@
 
+// Importamos  setupWorker para configurar el servidor falso
+import { setupWorker } from "msw";
+import { handlers } from "./api";
+
+const worker = setupWorker(...handlers);
+
+worker.start()
+
+
+
+
+
 // VARIABLES
 const lista = document.querySelector('.lista')
 const nameU = document.querySelector('#nameU')
@@ -10,7 +22,8 @@ const btn_retry = document.querySelector('.btn_retry')
 const loader = document.querySelector('.loader')
 const sad = document.querySelector('.sad')
 const error_red = document.querySelector('.error_red')
-const error_fetch = document.querySelector('#error_fetch')
+const error_fetch = document.querySelector('.error_fetch')
+const mensaje_error_fetch = document.querySelector('#mensaje_error_fetch')
 
 const fragment = document.createDocumentFragment();
 
@@ -26,6 +39,7 @@ const finder = async () => {
         loader.classList.remove('none')
         sad.classList.add('none')
         error_red.classList.add('none')
+        error_fetch.classList.add('none')
 
         const url = 'http://universities.hipolabs.com/search?name=middle'
         let response
@@ -38,11 +52,15 @@ const finder = async () => {
 
             return;
         }
-        const data = await response.json();
+        
         loader.classList.add('none')
-        error_red.classList.add('none')
-
         if (!response.ok) throw { status: response.status, statusText: response.statusText }
+       
+        
+
+        const data = await response.json();
+        error_red.classList.add('none')
+        
 
         const nameUni = nameU.value
 
@@ -73,9 +91,10 @@ const finder = async () => {
         lista.appendChild(fragment)
 
     } catch (error) {
-        loader.classList.add('none')
-        let message = error.statusText || 'Ocurrió un error'
-        error_fetch.textContent = `Error ${error.status}: ${message}`
+        // debugger;
+        error_fetch.classList.remove('none')
+        let message = error.statusText || 'Ocurrió un error8'
+        mensaje_error_fetch.textContent = `Error ${error.status}: ${message}`
     }
 }
 

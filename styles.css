@@ -18,7 +18,8 @@ body {
 .title,
 .form,
 .caption,
-.lista {
+.lista
+{
   width: 100%;
 }
 
@@ -57,7 +58,8 @@ body {
 
 .loader,
 .sad,
-.error_red {
+.error_red,
+.error_fetch {
   margin: auto;
 }
 
@@ -94,4 +96,9 @@ body {
 
 a:link {
   text-decoration: none;
+}
+
+
+.error_fetch > img {
+  width: 100%;
 }
